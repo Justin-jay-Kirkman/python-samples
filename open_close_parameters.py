@@ -1,24 +1,24 @@
-# open and close parenthisises, want to know if its valid
-
-# if ) first, then fail
-# if ( not mod 2 then fail
-# count how many
+# open and close parentheses, want to know if its valid
 
 test_cases = ["(", ")", "()", "(())", ")"]
-# close count mantained by open count decrements
+# close count maintained by open count decrements
 
-def test_string(s):
+#test open close parenthesis
+def test_open_close_par(s):
     open_count = 0
     for i in s:
         if i == "(":
             open_count += 1
+        if open_count == 0:
+            if i == ")":
+                return False
         if open_count > 0:
             if i == ")":
-                # closed one
-                open_count -= 1
+                open_count -=1
+
     if open_count != 0:
         return False
-    return False
+    return True
 
 for i in test_cases:
-    print(int(test_string(i)))
+    print(int(test_open_close_par(i)))
