@@ -17,10 +17,7 @@
 import copy
 
 class GameOfLife:
-    def __init__(self, width, height, board):
-        self.width = width
-        self.height = height
-        self.board = [[0 for x in range(width)] for y in range(height)]
+    def __init__(self, board):
         self.board = board
 
     def print_board(self, board=None):
@@ -96,10 +93,14 @@ class GameOfLife:
 
     def run(self, limit):
         current_board = copy.deepcopy(board)
+        previous_board = [[]]
         for i in range(limit):
             self.print_board(current_board)
+            previous_board = copy.deepcopy(current_board)
             current_board = self.next_board(current_board)
-
+            if current_board == previous_board:
+                print("optimized")
+                break
 
 # # 1 = Alive, 0 = Dead
 board = [
@@ -108,8 +109,8 @@ board = [
     [0, 1, 1]
 ]
 
-Game = GameOfLife(3,3, board)
-Game.run(4)
+Game = GameOfLife(board)
+Game.run(5)
 
 
 
