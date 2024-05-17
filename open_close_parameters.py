@@ -1,6 +1,13 @@
 # open and close parentheses, want to know if its valid
 
-test_cases = ["(", ")", "()", "(())", ")"]
+test_cases = [
+    "(", #0
+    ")", #0
+    "()", #1
+    "(())", #1
+    ")", #0
+    "(asdasd(sdasdasd)(sd(sd)sds)sdasd)"
+]
 # close count maintained by open count decrements
 
 #test open close parenthesis
@@ -15,7 +22,6 @@ def test_open_close_par(s):
         if open_count > 0:
             if i == ")":
                 open_count -=1
-
     if open_count != 0:
         return False
     return True
