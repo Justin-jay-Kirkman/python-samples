@@ -86,6 +86,13 @@ def find_neighbor(board, x, y):
 
     return result
 
+
+def game_of_life(board, limit):
+    current_board = copy.deepcopy(board)
+    for i in range(limit):
+        print_board(current_board)
+        current_board = next_board(current_board)
+
 # 1 = Alive, 0 = Dead
 board = [
     [1, 0, 0],
@@ -93,13 +100,12 @@ board = [
     [0, 1, 1]
 ]
 
-print_board(board)
+game_of_life(board, 10)
 
-next_board_result = next_board(board)
-print_board(next_board_result)
 
-next_board_result2 = next_board(next_board_result)
-print_board(next_board_result2)
+
+
+
 
 
 
