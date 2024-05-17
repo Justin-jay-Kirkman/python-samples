@@ -15,6 +15,8 @@
 #   X X     X X X        X   X
 #
 import copy
+import random
+
 
 class GameOfLife:
     def __init__(self, board):
@@ -31,7 +33,6 @@ class GameOfLife:
                 else:
                     print_row += "O "
             print(print_row)
-        print("--------------")
 
     def next_board(self, board=None):
         if board is None:
@@ -93,14 +94,16 @@ class GameOfLife:
 
     def run(self, limit):
         current_board = copy.deepcopy(board)
-        previous_board = [[]]
         for i in range(limit):
+            print(f"------ Stage {i} -----")
             self.print_board(current_board)
             previous_board = copy.deepcopy(current_board)
             current_board = self.next_board(current_board)
             if current_board == previous_board:
-                print("optimized")
+                print("----- optimized -----")
                 break
+
+# Examples
 
 # # 1 = Alive, 0 = Dead
 board = [
@@ -113,6 +116,11 @@ Game = GameOfLife(board)
 Game.run(5)
 
 
+# # 1 = Alive, 0 = Dead
+random_range = random.randrange(1, 10)
+board = [[random.randint(0, 1) for x in range(random_range)] for y in range(random_range)]
+Game = GameOfLife(board)
+Game.run(50)
 
 
 
