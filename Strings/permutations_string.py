@@ -2,18 +2,18 @@
 import itertools
 #input A, B
 test_cases = [
-    ["dasd","sadasdasdfaasdasdfaasdfaasdads"], #output array []
+    ["dasd","sadasdasdfaasdasdfaasdfaasdads"], #output Array []
     ["a", ""],
     ["a", "a"],
     ["", "sdsa"],
     ["dad","asdasdaasdsadad"]
 ]
-# create permutations for A as an array of strings
-# compair A array to substring B 1:A length - then increment 1 down the line <--don't need this, just compair string in
+# create permutations for A as an Array of strings
+# compair A Array to substring B 1:A length - then increment 1 down the line <--don't need this, just compair string in
 # ---- note optimization: also check if new character not in string A, then skip, increment by length A? or remove letter from string...
-# if found ->  write the result to array
-# are we going to add duplicates? if no, remove from results array
-# break if A array is empty
+# if found ->  write the result to Array
+# are we going to add duplicates? if no, remove from results Array
+# break if A Array is empty
 #error check that A length < B length : If not don't start
 
 class Permutations:
