@@ -31,6 +31,16 @@ class dog(Animal):
     def speak(self):
         print("My name is " + self.name)
 
+class unicorn(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def speak(self):
+        print("My name is " + self.name)
+
+    def dance(self):
+        print("I am a dancer and I am beautiful")
+
 a = Animal('Animal1')
 a.printanimal()
 
@@ -39,6 +49,10 @@ d.speak()
 d.printanimal()
 # fstring
 print(f"fprint: {d.getAnimal()}")
+
+u = unicorn('Amber')
+u.speak()
+u.dance()
 
 '''
 funtions
@@ -123,6 +137,15 @@ def pass_args(*args, **kargs):
 
 pass_args(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, [1,2])
 
+'''
+Sort
+'''
 
+cars = ['Ford', 'BMW', 'Volvo']
+cars.sort()
+print(cars)
+
+s = "fgdgsdgdsglkjldfgd"
+print("".join(sorted(s)))
 
 
