@@ -31,7 +31,7 @@ class GameOfLife:
                 if cell == 1:
                     print_row += "X "
                 else:
-                    print_row += "O "
+                    print_row += "  "
             print(print_row)
 
     def next_board(self, board=None):
@@ -92,7 +92,7 @@ class GameOfLife:
 
         return result
 
-    def run(self, limit):
+    def max_run(self, limit):
         current_board = copy.deepcopy(board)
         for i in range(limit):
             print(f"------ Stage {i} -----")
@@ -112,15 +112,15 @@ board = [
     [0, 1, 1]
 ]
 
-Game = GameOfLife(board)
-Game.run(5)
+# Game = GameOfLife(board)
+# Game.run(5)
 
 
 # # 1 = Alive, 0 = Dead
-random_range = random.randrange(1, 10)
+random_range = random.randrange(1, 15)
 board = [[random.randint(0, 1) for x in range(random_range)] for y in range(random_range)]
 Game = GameOfLife(board)
-Game.run(50)
+Game.max_run(100)
 
 
 
