@@ -56,7 +56,7 @@ u.speak()
 u.dance()
 
 '''
-funtions
+functions
 '''
 #note functions are actually objects
 
@@ -66,7 +66,7 @@ List comprehensions
 print("\nLIST COMPREHENSIONS")
 x = [x for x in range(10)]
 print(x)
-x = [[0 for x in range(100)] for y in range(5)]
+x = [[0 for x in range(5)] for y in range(5)]
 print(x)
 x = [i for i in range(100)]
 print(x)
